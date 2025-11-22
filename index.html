@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main page -->
+     <script src="./assets/js/debug.js"></script>
+
+    <title>CookingFrenzy - New recipes constantly.</title>
+    <meta name="title content" content="CookingFrenzy - New recipes constantly.">
+    <meta name="description" content="Cooking website with many delicious dishes and diverse recipes.">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <!--Themejs-->
+    <script src="./assets/js/theme.js"></script>
+    <!--Font Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!--Material icon-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!--JS-->
+    <script src="./assets/js/global.js" type="module"></script>
+    <script src="./assets/js/home.js" type="module"></script>
+    <script type="module" src="./assets/js/firebaseauth.js"></script>
+</head>
+<body>
+<!--Header-->
+<header class="header" data-header>
+<a href="/" class="logo">
+    <img src="./assets/images/logo-light.png" width="156" height="32"
+    alt="CookingFrenzy" class="logo-light">
+    <img src="./assets/images/logo-dark.png" width="156" height="32"
+    alt="CookingFrenzy" class="logo-dark">
+    </a>
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li>
+                <a href="/" class="navbar-link title-small has-state active">Home</a>
+            </li>
+            <li>
+                <a href="/recipes.html" class="navbar-link title-small has-state">Recipes</a>
+            </li>
+        </ul>
+    </nav>
+    <button class="icon-btn theme-switch has-state" aria-pressed="false"
+    aria-label="Change theme" data-theme-btn>
+        <span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+</button>
+<a href="./saved-recipes.html" class="btn btn-primary has-icon">
+    <span class="material-symbols-outlined" aria-hidden="true">book</span>
+    <span class="span">Saved Recipes</span>
+</a>
+    </header>   
+    <!--Mobile nav-->
+    <nav class="mobile-nav" aria-label="primary">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="./recipes.html" class="nav-link">
+                    <span class="item-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">launch_dining</span>
+                    </span>
+                    <span class="label-medium">Recipes</span>
+                </a>
+            </li>
+                <li class="nav-item">
+                <a href="#" class="nav-link" aria-current="true">
+                    <span class="item-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                    </span>
+                    <span class="label-medium">Home</span>
+                </a>
+            </li>
+                <li class="nav-item">
+                <a href="./saved-recipes.html" class="nav-link">
+                    <span class="item-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">book</span>
+                    </span>
+                    <span class="label-medium">Saved</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <!--Hero section-->
+            <section class="hero" aria-label="banner">
+                <div class="banner-card">
+                    <h1 class="display-larger">What's your favorite dish?</h1>
+                    <div class="search-wrapper" data-search-form>
+                         <span class="material-symbols-outlined leading-icon" aria-hidden="true">local_dining</span>
+                         <input type="search" name="search" aria-label="Search recipes" placeholder="Search recipes..." id="" class="search-field body-medium" data-search-field>
+                         <button class="search-submit" aria-label="Submit" data-search-btn>
+                              <span class="material-symbols-outlined" aria-hidden="true">search</span>
+                         </button>
+                        </div>
+                        <p class="label-medium">Discover thousands of recipes now!</p>
+                    </div>
+            </section>
+            <!--Tab-->
+            <section class="section tab">
+                <div class="container">
+                    <div class="tab-list" data-tab-list-role="tablist" aria-label="Recipe types">
+                        <button class="tab-btn title-small" role="tab" id="tab-1"
+                        tabindex="0" aria-controls="panel-1"
+                        aria-selected="true" data-tab-btn>Beef</button>
+                          <button class="tab-btn title-small" role="tab" id="tab-2"
+                        tabindex="1" aria-controls="panel-2"
+                        aria-selected="false" data-tab-btn>Chicken</button>
+                        <button class="tab-btn title-small" role="tab" id="tab-3"
+                        tabindex="2" aria-controls="panel-3"
+                        aria-selected="false" data-tab-btn>Seafood</button>
+                        <button class="tab-btn title-small" role="tab" id="tab-4"
+                        tabindex="3" aria-controls="panel-4"
+                        aria-selected="false" data-tab-btn>Vegetarian</button>
+                        <button class="tab-btn title-small" role="tab" id="tab-5"
+                        tabindex="4" aria-controls="panel-5"
+                        aria-selected="false" data-tab-btn>Dessert</button>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="panel-1"
+                    aria-labelledby="tab-1" tabindex="0" data-tab-panel>
+                    <a href="./recipes.html" class="btn btn-primary label-large has-state">See more</a> 
+                </div>
+                    <div class="tab-panel" role="tabpanel" id="panel-2"
+                    aria-labelledby="tab-2" tabindex="0" data-tab-panel hidden>Chicken</div>
+                    <div class="tab-panel" role="tabpanel" id="panel-3"
+                    aria-labelledby="tab-3" tabindex="0" data-tab-panel hidden>Seafood</div>
+                    <div class="tab-panel" role="tabpanel" id="panel-4"
+                    aria-labelledby="tab-4" tabindex="0" data-tab-panel hidden>Vegetarian</div>
+                    <div class="tab-panel" role="tabpanel" id="panel-5"
+                    aria-labelledby="tab-5" tabindex="0" data-tab-panel hidden>Dessert</div>
+                </div>
+            </section>
+
+            <!-- Recipe Slider -->
+             <section class="section slider-section" aria-labelledby="slider-label-1" data-slider-section></section>
+<section class="section slider-section" aria-labelledby="slider-label-2" data-slider-section></section>
+<section class="section slider-section" aria-labelledby="slider-label-3" data-slider-section></section>
+<section class="section slider-section" aria-labelledby="slider-label-4" data-slider-section></section>
+<section class="section slider-section" aria-labelledby="slider-label-5" data-slider-section></section>
+            </section>
+            <!--Tags-->
+            <section class="section tag" aria-label="tag-label">
+                <div class="container">
+                    <h2 class="section-title display-small" id="tag-label">
+                        Choose your favorite recipes!
+                    </h2>
+
+                    <p class="body-medium section-text">
+                        Cook your way with diverse recipes from CookingFrenzy. 
+                        From delicious appetizers to sweet desserts, we have everything to enrich your culinary experience. 
+                        Explore today and turn every meal into a culinary adventure!
+                    </p>
+
+                    <div class="tag-list">                  
+                        <a href="./recipes.html?category=Beef" class="badge-btn body-medium has-state">
+                            Beef
+                        </a>
+
+                        <a href="./recipes.html?category=Chicken" class="badge-btn body-medium has-state">
+                            Chicken
+                        </a>
+
+                        <a href="./recipes.html?category=Seafood" class="badge-btn body-medium has-state">
+                            Seafood
+                        </a>
+
+                        <a href="./recipes.html?category=Pork" class="badge-btn body-medium has-state">
+                            Pork
+                        </a>
+
+                        <a href="./recipes.html?category=Vegetarian" class="badge-btn body-medium has-state">
+                            Vegetarian
+                        </a>
+
+                        <a href="./recipes.html?category=Pasta" class="badge-btn body-medium has-state">
+                            Pasta
+                        </a>
+
+                        <a href="./recipes.html?category=Dessert" class="badge-btn body-medium has-state">
+                            Dessert
+                        </a>
+
+                        <a href="./recipes.html?category=Side" class="badge-btn body-medium has-state">
+                            Side Dishes
+                        </a>
+
+                        <a href="./recipes.html?category=Starter" class="badge-btn body-medium has-state">
+                            Starters
+                        </a>
+
+                        <a href="./recipes.html?category=Vegan" class="badge-btn body-medium has-state">
+                            Vegan
+                        </a>
+
+                        <a href="./recipes.html?category=Lamb" class="badge-btn body-medium has-state">
+                            Lamb
+                        </a>
+
+                        <a href="./recipes.html?category=Miscellaneous" class="badge-btn body-medium has-state">
+                            Miscellaneous
+                        </a>
+                        
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <!--Footer-->
+   <!--Footer-->
+<footer class="footer">
+    <p class="copyright body-medium">
+        Copyright © CookingFrenzy. Powered by
+        <a href="https://www.themealdb.com/" target="_blank" class="edamam">
+            <img src="./assets/images/mealdb.png" width="200" height="40"
+            loading="lazy" alt="TheMealDB">
+        </a>
+    </p>
+    
+    <a href="/" class="logo">
+        <img src="./assets/images/logo-light.png" width="156" height="32"
+        alt="CookingFrenzy" class="logo-light">
+        <img src="./assets/images/logo-dark.png" width="156" height="32"
+        alt="CookingFrenzy" class="logo-dark">
+    </a>
+</footer>
+
+    <div class="snackbar-container">
+        <div class="snackbar">
+           
+        </div>
+    </div>
+    </body>
+</html>
